@@ -1,8 +1,8 @@
 package org.vashykator;
 
-public class SplitByCommaStrategy implements SplitStrategy {
+public class SplitByCommaStrategy extends SplitTemplateStrategy {
     @Override
-    public String[] split(String str) {
-        return str.split("[,\n]");
+    protected String splitChars() {
+        return ",";
     }
 }

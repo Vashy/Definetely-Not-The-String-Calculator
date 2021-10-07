@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StringCalculatorTest {
-    private final StringCalculator stringCalculator = new StringCalculator(new SplitByCommaStrategy(),
+    private final StringCalculator stringCalculator =
+            new StringCalculator(new SplitByNewLineStrategyDecorator(new SplitByCommaStrategy()),
             new KeepNonEmptyFilterStrategy(), new SimpleStringToIntegerParseConverter(), new SimpleSumStrategy());
 
     @Test
