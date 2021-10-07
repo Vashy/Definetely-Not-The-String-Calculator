@@ -15,4 +15,11 @@ class StringCalculatorTest {
         assertEquals(3, stringCalculator.add("1,2"));
         assertEquals(10, stringCalculator.add("3,7"));
     }
+
+    @Test
+    @DisplayName("should return one integer")
+    void test2() {
+        assertEquals(1, stringCalculator.add("1"));
+        assertEquals(3, stringCalculator.add("3"));
+    }
 }
