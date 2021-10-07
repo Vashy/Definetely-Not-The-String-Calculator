@@ -22,4 +22,10 @@ class StringCalculatorTest {
         assertEquals(1, stringCalculator.add("1"));
         assertEquals(3, stringCalculator.add("3"));
     }
+
+    @Test
+    @DisplayName("should return zero on empty string")
+    void test3() {
+        assertEquals(0, stringCalculator.add(""));
+    }
 }
