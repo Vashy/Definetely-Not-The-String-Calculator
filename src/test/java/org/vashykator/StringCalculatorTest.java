@@ -3,11 +3,11 @@ package org.vashykator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StringCalculatorTest {
-
-    private final StringCalculator stringCalculator = new StringCalculator(new SplitByCommaStrategy());
+    private final StringCalculator stringCalculator = new StringCalculator(new SplitByCommaStrategy(),
+            new KeepNonEmptyFilterStrategy(), new SimpleStringToIntegerParseConverter(), new SimpleSumStrategy());
 
     @Test
     @DisplayName("should return the sum of the two given integers")
