@@ -12,8 +12,7 @@ class StringCalculatorTest {
     @Test
     @DisplayName("should return the sum of the two given integers")
     void test1() {
-        int result = stringCalculator.add("1,2");
-
-        assertEquals(3, result);
+        assertEquals(3, stringCalculator.add("1,2"));
+        assertEquals(10, stringCalculator.add("3,7"));
     }
 }
