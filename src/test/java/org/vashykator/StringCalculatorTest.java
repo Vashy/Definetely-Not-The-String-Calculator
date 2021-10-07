@@ -34,4 +34,11 @@ class StringCalculatorTest {
     void test4() {
         assertEquals(17, stringCalculator.add("4,3,2,4,3,1"));
     }
+
+    @Test
+    @DisplayName("should handle new line as a separator")
+    void test5() {
+        assertEquals(3, stringCalculator.add("1\n2"));
+        assertEquals(15, stringCalculator.add("3\n7,5"));
+    }
 }
