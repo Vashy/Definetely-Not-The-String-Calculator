@@ -19,8 +19,8 @@ public class StringCalculator {
         this.sumStrategy = sumStrategy;
     }
 
-    public int add(String commaSeparatedNumbers) {
-        return Arrays.stream(splitStrategy.split(commaSeparatedNumbers))
+    public int add(String numbersAsString) {
+        return Arrays.stream(splitStrategy.split(numbersAsString))
                 .filter(filterStrategy::shouldKeep)
                 .mapToInt(stringToIntegerConverter::convert)
                 .reduce(0, sumStrategy::sum);
