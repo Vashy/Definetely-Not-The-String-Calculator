@@ -28,4 +28,10 @@ class StringCalculatorTest {
     void test3() {
         assertEquals(0, stringCalculator.add(""));
     }
+
+    @Test
+    @DisplayName("handle unknown amount of numbers")
+    void test4() {
+        assertEquals(17, stringCalculator.add("4,3,2,4,3,1"));
+    }
 }
