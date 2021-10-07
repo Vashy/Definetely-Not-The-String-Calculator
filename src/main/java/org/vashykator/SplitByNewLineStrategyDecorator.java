@@ -1,14 +1,14 @@
 package org.vashykator;
 
 public class SplitByNewLineStrategyDecorator extends SplitTemplateStrategy {
-    private final SplitTemplateStrategy splitTemplateStrategy;
+    private final SplitTemplateStrategy delegate;
 
-    public SplitByNewLineStrategyDecorator(SplitTemplateStrategy splitTemplateStrategy) {
-        this.splitTemplateStrategy = splitTemplateStrategy;
+    public SplitByNewLineStrategyDecorator(SplitTemplateStrategy delegate) {
+        this.delegate = delegate;
     }
 
     @Override
     protected String splitChars() {
-        return splitTemplateStrategy.splitChars() + "\n";
+        return delegate.splitChars() + "\n";
     }
 }

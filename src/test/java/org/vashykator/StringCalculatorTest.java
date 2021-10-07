@@ -7,8 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StringCalculatorTest {
     private final StringCalculator stringCalculator =
-            new StringCalculator(new SplitByNewLineStrategyDecorator(new SplitByCommaStrategy()),
-            new KeepNonEmptyFilterStrategy(), new SimpleStringToIntegerParseConverter(), new SimpleSumStrategy());
+            new StringCalculator(
+                    new CustomSeparatorSplitStrategyDecorator(new SplitByNewLineStrategyDecorator(new SplitByCommaStrategy())),
+                    new KeepNonEmptyFilterStrategy(),
+                    new SimpleStringToIntegerParseConverter(),
+                    new SimpleSumStrategy());
 
     @Test
     @DisplayName("should return the sum of the two given integers")
@@ -41,5 +44,12 @@ class StringCalculatorTest {
     void test5() {
         assertEquals(3, stringCalculator.add("1\n2"));
         assertEquals(15, stringCalculator.add("3\n7,5"));
+    }
+
+    @Test
+    @DisplayName("should handle custom delimiter")
+    void test6() {
+        assertEquals(3, stringCalculator.add("//+\n1+2"));
+        assertEquals(15, stringCalculator.add("//-\n3-7-5"));
     }
 }
