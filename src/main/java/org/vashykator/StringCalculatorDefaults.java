@@ -4,19 +4,19 @@ public final class StringCalculatorDefaults {
     private StringCalculatorDefaults() {
     }
 
-    public static SplitByNewLineStrategyDecorator defaultSplitStrategy() {
-        return new SplitByNewLineStrategyDecorator(new SplitByCommaStrategy());
+    public static SplitStrategy defaultSplitStrategy() {
+        return new CustomSeparatorSplitStrategyDecorator(new SplitByNewLineStrategyDecorator(new SplitByCommaStrategy()));
     }
 
-    public static KeepNonEmptyFilterStrategy defaultFilterStrategy() {
+    public static FilterStrategy defaultFilterStrategy() {
         return new KeepNonEmptyFilterStrategy();
     }
 
-    public static SimpleStringToIntegerParseConverter defaultStringToIntConverter() {
+    public static StringToIntegerParseConverter defaultStringToIntConverter() {
         return new SimpleStringToIntegerParseConverter();
     }
 
-    public static SimpleSumStrategy defaultSumStrategy() {
+    public static SumStrategy defaultSumStrategy() {
         return new SimpleSumStrategy();
     }
 }
