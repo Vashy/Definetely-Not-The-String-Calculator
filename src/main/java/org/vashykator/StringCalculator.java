@@ -1,6 +1,6 @@
 package org.vashykator;
 
-import java.util.Arrays;
+import static java.util.Arrays.stream;
 
 public class StringCalculator {
     private final SplitStrategy splitStrategy;
@@ -9,18 +9,18 @@ public class StringCalculator {
     private final SumStrategy sumStrategy;
 
     public StringCalculator(
-            SplitStrategy splitStrategy,
-            FilterStrategy filterStrategy,
-            StringToIntegerParseConverter stringToIntegerConverter,
-            SumStrategy sumStrategy) {
+            final SplitStrategy splitStrategy,
+            final FilterStrategy filterStrategy,
+            final StringToIntegerParseConverter stringToIntegerConverter,
+            final SumStrategy sumStrategy) {
         this.splitStrategy = splitStrategy;
         this.filterStrategy = filterStrategy;
         this.stringToIntegerConverter = stringToIntegerConverter;
         this.sumStrategy = sumStrategy;
     }
 
-    public int add(String numbersAsString) {
-        return Arrays.stream(splitStrategy.split(numbersAsString))
+    public int add(final String numbersAsString) {
+        return stream(splitStrategy.split(numbersAsString))
                 .filter(filterStrategy::shouldKeep)
                 .mapToInt(stringToIntegerConverter::convert)
                 .reduce(0, sumStrategy::sum);

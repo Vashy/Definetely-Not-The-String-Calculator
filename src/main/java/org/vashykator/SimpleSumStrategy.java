@@ -2,7 +2,7 @@ package org.vashykator;
 
 public class SimpleSumStrategy implements SumStrategy {
     @Override
-    public int sum(int left, int right) {
+    public int sum(final int left, final int right) {
         return left + right;
     }
 }

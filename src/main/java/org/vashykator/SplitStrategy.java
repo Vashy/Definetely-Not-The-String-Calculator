@@ -1,5 +1,5 @@
 package org.vashykator;
 
 public interface SplitStrategy {
-    String[] split(String str);
+    String[] split(final String str);
 }

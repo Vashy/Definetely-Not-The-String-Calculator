@@ -1,5 +1,5 @@
 package org.vashykator;
 
 public interface StringToIntegerParseConverter {
-    int convert(String str);
+    int convert(final String str);
 }

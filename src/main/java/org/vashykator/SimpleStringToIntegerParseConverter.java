@@ -4,7 +4,7 @@ import static java.lang.Integer.parseInt;
 
 public class SimpleStringToIntegerParseConverter implements StringToIntegerParseConverter {
     @Override
-    public int convert(String str) {
+    public int convert(final String str) {
         return parseInt(str);
     }
 }
