@@ -2,7 +2,7 @@ package org.vashykator;
 
 import static java.util.Arrays.stream;
 
-public class StringCalculator {
+public final class StringCalculator {
     private final SplitStrategy splitStrategy;
     private final FilterStrategy filterStrategy;
     private final StringToIntegerParseConverter stringToIntegerConverter;
@@ -19,8 +19,8 @@ public class StringCalculator {
         this.sumStrategy = sumStrategy;
     }
 
-    public int add(final String numbersAsString) {
-        return stream(splitStrategy.split(numbersAsString))
+    public int add(final StringCalculatorInput input) {
+        return stream(splitStrategy.split(input))
                 .filter(filterStrategy::shouldKeep)
                 .mapToInt(stringToIntegerConverter::convert)
                 .reduce(0, sumStrategy::sum);

@@ -15,7 +15,7 @@ public class OneTimeExecutionApplicationRunner implements ApplicationRunner {
 
     @Override
     public void run() {
-        final String input = inputReader.readInput();
+        final StringCalculatorInput input = inputReader.readInput();
         final StringCalculator stringCalculator = stringCalculatorFactory.create();
         final int result = stringCalculator.add(input);
 
