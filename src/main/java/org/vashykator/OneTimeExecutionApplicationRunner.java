@@ -1,6 +1,6 @@
 package org.vashykator;
 
-public class OneTimeExecutionApplicationRunner implements ApplicationRunner {
+public final class OneTimeExecutionApplicationRunner implements ApplicationRunner {
     private final InputReader inputReader;
     private final StringCalculatorFactory stringCalculatorFactory;
     private final OutputWriter outputWriter;

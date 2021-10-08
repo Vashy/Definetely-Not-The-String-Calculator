@@ -1,6 +1,6 @@
 package org.vashykator;
 
-public class StringCalculatorFactory {
+public final class StringCalculatorFactory {
 
     public StringCalculator create() {
         return new StringCalculator(

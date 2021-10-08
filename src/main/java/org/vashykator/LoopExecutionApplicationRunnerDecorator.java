@@ -1,6 +1,6 @@
 package org.vashykator;
 
-public class LoopExecutionApplicationRunnerDecorator implements ApplicationRunner {
+public final class LoopExecutionApplicationRunnerDecorator implements ApplicationRunner {
     private final ApplicationRunner applicationRunner;
 
     public LoopExecutionApplicationRunnerDecorator(final ApplicationRunner applicationRunner) {

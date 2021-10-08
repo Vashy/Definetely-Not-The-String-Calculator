@@ -1,6 +1,6 @@
 package org.vashykator;
 
-public class CustomSeparatorSplitStrategyDecorator implements SplitStrategy {
+public final class CustomSeparatorSplitStrategyDecorator implements SplitStrategy {
     private final SplitStrategy delegate;
 
     public CustomSeparatorSplitStrategyDecorator(final SplitStrategy delegate) {
