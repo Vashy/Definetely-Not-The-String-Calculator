@@ -40,7 +40,7 @@ public final class ApplicationRunnerBuilder {
         final OneTimeExecutionApplicationRunner applicationRunner =
                 new OneTimeExecutionApplicationRunner(
                 inputReader,
-                new StringCalculatorFactory(),
+                new DefaultStringCalculatorFactory(),
                 outputWriter
         );
         return looping ? new LoopExecutionApplicationRunnerDecorator(applicationRunner) : applicationRunner;

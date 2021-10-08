@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StringCalculatorTest {
     private final StringCalculator stringCalculator =
-            new StringCalculatorFactory().create();
+            new DefaultStringCalculatorFactory().create();
 
     @Test
     @DisplayName("should return the sum of the two given integers")
